@@ -1,11 +1,46 @@
-import { Navbar, NavbarBrand } from "react-bootstrap";
+import { Nav, Navbar, Collapse, NavItem } from "react-bootstrap";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <>
-      <Navbar dark>
+    <div>
+      <Navbar dark expand="md" className="navbar-dark">
         <div className="container">
-          <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
+          <Navbar.Brand className="mr-auto" href="/">
+            <img
+              src="assets/images/logo.png"
+              height="30"
+              width="41"
+              alt="Ristorante Con Fusion"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse aria-controls="responsive-navbar-nav">
+            <Nav navbar>
+              <NavItem>
+                <NavLink className="nav-link" to="/home">
+                  <span className="fa fa-home fa-lg"></span> Home
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-link" to="/aboutus">
+                  <span className="fa fa-info fa-lg"></span> About Us
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-link" to="/menu">
+                  <span className="fa fa-list fa-lg"></span> Menu
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-link" to="/contactus">
+                  <span className="fa fa-address-card fa-lg"></span> Contact Us
+                </NavLink>
+              </NavItem>
+            </Nav>
+          </Navbar.Collapse>
+          {/* </Collapse> */}
         </div>
       </Navbar>
       <div className="jumbotron">
@@ -22,6 +57,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
