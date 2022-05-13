@@ -1,5 +1,4 @@
-import { Card, Breadcrumb, BreadcrumbItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 
 const RenderDish = ({ dish }) => (
   <Card key={dish.id}>
@@ -27,30 +26,17 @@ const RenderComments = ({ comments }) => {
   );
 };
 
-export default function DishDetail({ dish, comments }) {
+export default function DishDetail({ dish }) {
   if (!dish) return <></>;
 
   return (
     <div className="container">
       <div className="row">
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <Link to="/menu">Menu</Link>
-          </BreadcrumbItem>
-          <BreadcrumbItem active>{dish.name}</BreadcrumbItem>
-        </Breadcrumb>
-        <div className="col-12">
-          <h3>{dish.name}</h3>
-          <hr />
-        </div>
-      </div>
-      <div className="row">
         <div className="col-12 col-md-5 m-1">
           <RenderDish dish={dish} />
         </div>
-        <div className="col-12 col-md-5 m-1">
-          <RenderComments comments={comments} />
-        </div>
+        <div className="col-12 col-md-5 m-1"></div>
+        <RenderComments comments={dish.comments} />
       </div>
     </div>
   );
