@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <div>
-      <Navbar dark expand="md" className="navbar-dark">
+      <Navbar dark="true" expand="md" className="navbar-dark">
         <div className="container">
           <Navbar.Brand className="mr-auto" href="/">
             <img
